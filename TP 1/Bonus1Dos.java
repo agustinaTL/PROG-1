@@ -1,3 +1,35 @@
+Ejercicio sin IF:
+
+package com.example;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+class Ejercicio7 {
+  public static void main(String[] args) {
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    final int MONTO_MENOR_MARTES=13000;
+    final int MONTO_JUEVES=25000;
+    
+    try{
+      System.out.println("Ingrese el día de la semana"); //se ingresa el primer número
+		int dia = Integer.valueOf(reader.readLine());
+      
+      System.out.println("Ingrese el total número");
+		int total = Integer.valueOf(reader.readLine());
+      
+      boolean seAplicaDescuento=(((dia==1)&&(total>MONTO_MENOR_MARTES))||((dia==2)&&(total>MONTO_JUEVES)));
+     System.out.println("El descuento es aplicable "+seAplicaDescuento);
+     
+    }
+    catch(Exception exc){
+      System.out.println("Error en los valores ingresados "+exc);
+    }
+  }
+}
+
+Ejercicio con IF:
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
